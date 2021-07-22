@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cupiditate deleniti
+    molestias mollitia pariatur porro saepe! Dolorem eaque earum eligendi, iste maxime molestias quam vitae.
+    Dolore hic in quae sed.
+</p>
+
+<div id="rules" class="fc bp">
+    Первое правило Бойцовского клуба: никому не рассказывать о Бойцовском клубе. Второе правило Бойцовского
+    клуба: никогда никому не рассказывать о Бойцовском клубе. Третье правило Бойцовского клуба: в схватке
+    участвуют только двое. Четвертое правило Бойцовского клуба: не более одного поединка за один раз
+</div>
+
+<ul>
+    <li class="fc_rules rule1">Первое правило Бойцовского клуба: никому не рассказывать о Бойцовском клубе.</li>
+    <li class="fc_rules rule2">Второе правило Бойцовского
+        клуба: никогда никому не рассказывать о Бойцовском клубе
+    </li>
+    <li class="fc_rules rule3">Третье правило Бойцовского клуба: в схватке
+        участвуют только двое.
+    </li>
+    <li class="fc_rules rule4">Четвертое правило Бойцовского клуба: не более одного поединка за один раз</li>
+</ul>
+
+<script>
+    // - Напишіть код,  який за допомоги document.getElementById або document.getElementsByClassName або document.getElementsByTagName :
+    // -- отримує текст з параграфа з id "content"
+    let content = document.getElementById('content');
+    console.log(content);
+
+    // -- отримує текст з блоку з id "rules"
+    let rules = document.getElementById('rules');
+    console.log(rules);
+
+    // -- замініть текст параграфа з id 'content' на будь-який інший
+    content.innerText = 'Основой HTML-документа являются теги. В соответствии с объектной моделью документа («Document Object Model», коротко DOM), каждый HTML-тег является объектом. Вложенные теги являются «детьми» родительского элемента. Текст, который находится внутри тега, также является объектом.'
+
+    // -- замініть текст параграфа з id 'rules' на будь-який інший
+    rules.innerText = 'Теги являются узлами-элементами (или просто элементами). Они образуют структуру дерева: <html> – это корневой узел, <head> и <body> его дочерние узлы и т.д. Текст внутри элементов образует текстовые узлы, обозначенные как #text. Текстовый узел содержит в себе только строку текста. У него не может быть потомков, т.е. он находится всегда на самом нижнем уровне.'
+
+    // -- змініть кожному елементу колір фону на червоний
+    document.body.style.background = '#FF0000';
+
+    // -- змініть кожному елементу колір тексту на синій
+    document.body.style.background = '#008000';
+
+    // -- отримати весь список класів елемента з id=rules і вивести їх в console.log
+    console.log(rules.classList);
+
+    // -- отримати всі елементи з класом fc_rules. визначити їм 2 події "клік", одна вивдоить текст елементу, інша довільний ьексь
+    let elfc_rules = document.getElementsByClassName('fc_rules');
+    for (let el of elfc_rules){
+        el.onclick = function () {
+            console.log(el);
+        }
+    }
+    for (let el of elfc_rules){
+        el.onclick = function () {
+            console.log('some text');
+        }
+    }
+
+    // -- поміняти колір тексту у всіх елементів fc_rules на червоний
+    for (const el of elfc_rules) {
+        el.style.color = '#FF0000';
+    }
+
+</script>
+</body>
+</html>
